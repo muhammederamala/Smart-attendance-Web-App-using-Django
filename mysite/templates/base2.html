@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>AMZ attendance marker</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'personal/mystyle.css' %}">
+    <link rel="stylesheet" href="{% static 'personal/menubar.css' %}">
+    <link rel="stylesheet" href="{% static 'personal/classes.css' %}">
+    <link rel="stylesheet" href="{% static 'personal/temp.css' %}">
+
+  </head>
+  <body>
+
+     <!--  <nav class="navbar">
+      <label class="logo">SAM</label>
+      <ul>
+        <li><a href= "{% url 'home' %}">Login</a></li>
+        <li><a class = "active" href="logbook.html">Logbook</a></li>
+        <li><a href="feedback.html">Feedback</a></li>
+        <li><a href="{% url 'login' %}">Log out</a></li>
+      </ul>
+    </nav>
+ -->
+    <div class="sidebar">
+    <!-- <label class="logo">SAM</label> -->
+    <a href="{% url 'logbook' %}">Logbook</a>
+    <a href="{% url 'class_list_view' %}">View classes</a>
+    <a href="{% url 'login' %}">Logout</a>
+    <a href="#">Blog</a>
+    <a href="#">Services</a>
+  </div>
+
+      {% block content %}
+      {% endblock content %}
+
+  </body>
+</html>
