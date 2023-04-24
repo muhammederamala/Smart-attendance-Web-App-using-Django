@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>AMZ attendance marker</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'personal/mystyle.css' %}">
+    <link rel="stylesheet" href="{% static 'personal/temp.css' %}">
+  </head>
+  <body>
+    <nav class="navbar fixed-top">
+      <input type="checkbox" id="check">
+      <label for="check" class="checkbtn">
+        <i class="fas fa-bars"></i>
+      </label>
+      <label class="logo">SAM</label>
+
+      {% block content %}
+      {% endblock content %}
+
+  </body>
+</html>
+
