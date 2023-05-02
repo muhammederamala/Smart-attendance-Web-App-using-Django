@@ -1,0 +1,72 @@
+
+
+{% extends 'base2.html' %}
+
+{% block content %}
+
+
+{% if classes %}
+
+{% for new_class in classes %}
+
+
+
+<div class="containerclass">
+      <div class="row">
+
+        </div>
+          <div class="columnclasslist1" id="displayclass" >
+              <p class="icontext"> Subject</p>
+              <br>
+              <p class="icontext"> Class</p>
+              <br>
+              <p class="icontext"> No of students</p>
+              <br>
+              <form action="{% url 'delete_view' new_class.id %}" method="POST">
+                {% csrf_token %}
+              <button type= "submit" class="button4">
+                <p> Delete </p>
+              </button>
+          </form>
+          </div>
+
+          <div class="columnclasslist" id="displayclass" >
+              <p class="icontext"> : {{ new_class.subject }}</p>
+              <br>
+              <p class="icontext"> : {{ new_class.new_class }}</p>
+              <br>
+              <p class="icontext"> : {{ new_class.no_of_students }}</p>
+              <br>
+          </div>
+
+
+          <div class="columnclasslist">
+              <div class="columnclasslist">
+            <a href="{% url 'capture_view' %}">
+          <button class="button3" >
+            <h4> Take attendance</h4>
+        </button>
+          </div>
+
+      </div>
+</div>
+
+{% endfor %}
+
+{% else %}
+
+<div class="noclasses">
+  <p class="noclasstext">
+    You have no classes enrolled !
+  </p>
+  <br>
+  <a href="{% url 'add_class_view' %}">
+    <button class="noclassbutton" >
+      <h4> Create new class</h4>
+    </button>
+</div>
+
+
+{% endif %}
+
+{% endblock content%}
