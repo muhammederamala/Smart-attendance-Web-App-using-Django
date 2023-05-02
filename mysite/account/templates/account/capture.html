@@ -1,1 +1,28 @@
+{% extends 'base2.html' %}
 
+{% block content %}
+
+
+<div class="camera">
+
+  <img src="{% url 'video_feed' %}" width="500" height="350">
+
+</div>
+
+<form method="post" action="{% url 'capture_photo' %}">
+  {% csrf_token %}
+<div class="row1">
+<div class="column1">
+  <a href="{% url 'capture_photo' %}">
+
+  <button class="button1" name="msg">
+      <h2> Capture</h2>
+  </button>
+</a>
+
+</div>
+</div>
+</form>
+
+
+{% endblock content %}
