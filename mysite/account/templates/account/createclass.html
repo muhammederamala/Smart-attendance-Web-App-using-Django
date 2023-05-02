@@ -1,0 +1,30 @@
+{% extends 'base2.html' %}
+
+{% block content %}
+
+<div>
+	<!-- <div class="button">
+		<h2> create a new class </h2>
+	</div> -->
+	<div class="container1">
+		<div class="row">
+			<h2> Create a new class </h2>
+			<form method="post" action="{% url 'add_class_view' %}">
+				{% csrf_token %}
+				<input type="text" class="classform" placeholder="Enter the subject" name="subject" id="subject">
+				<br>
+				<input type="text" class="classform"  placeholder="Enter the semester and branch. eg: CSE8" name="new_class" id="new_class">
+				<br>
+				<input type="text" class="classform" placeholder="Enter number of students" name="no_of_students" id="no_of_students">
+				<br>
+				<a href="{% url 'add_class_view' %}">
+  				<button class="button2" >
+      			<h4> Continue</h4>
+				</button>
+			</form>
+		</div>
+	</div>
+
+
+</div>
+{% endblock content %}
