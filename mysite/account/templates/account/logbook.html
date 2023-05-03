@@ -1,0 +1,38 @@
+{% extends 'base2.html' %}
+
+{% block content %}
+<a href="{% url 'class_list_view' %}">
+<div class="container">
+      <div class="row">
+          <div class="column">
+            <a href="{% url 'class_list_view' %}">{% load static %}<img src="{%static 'personal/media/myclasses.png' %}" class="icons" ></a>
+            <br>
+            <a class="icontext" href="{% url 'class_list_view' %}"><figcaption>  MY CLASSES</figcaption></a>
+          </div>
+          <div class="column" id="iconcaptions">
+            <a href="{% url 'class_list_view' %}">
+              <p> View all your academic classes here !</p>
+            </a>
+          </div>
+      </div>
+</div>
+</a>
+
+<div class="container5">
+      <div class="row">
+          <div class="column">
+            <a href="{% url 'create_class' %}">{% load static %}<img src="{% static 'personal/media/newclass.png' %}" class="icons"></a>
+            <br>
+            <a class="icontext" href="{% url 'create_class' %}"><figcaption>  NEW CLASS</figcaption></a>
+          </div>
+          <div class="column" id="iconcaptions">
+            <a href="{% url 'create_class' %}">
+              <p> Create a new class.</p>
+            </a>
+          </div>
+      </div>
+    
+</div>
+
+  {% endblock content %}
+  }
