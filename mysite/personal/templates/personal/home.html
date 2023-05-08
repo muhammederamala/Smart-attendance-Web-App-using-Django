@@ -1,1 +1,26 @@
+{% extends 'base.html' %}
 
+{% block content %}
+
+<div class="formbox1">
+
+
+<form method="post" action="{% url 'sign_in_view' %}">
+  {% csrf_token %}
+
+<h1 class="max"> Login </h1>
+<input type="text" class="max1" id="email" placeholder="username" name="username">
+<br>
+<input type="password" class="max1" id="password" placeholder="password" name="password">
+<br>
+{% if error_message %}
+    <p style="color: red;">Incorrect Login or password. Please try again.</p>
+{% endif %}
+<br>
+<input type="submit" name="submit" class="max1" placeholder="SUBMIT" id="submitid">
+<br>
+  <a href="{% url 'login' %}" id="links">Don't have an account.</a>
+</form>
+</div>  
+
+{% endblock content %}
