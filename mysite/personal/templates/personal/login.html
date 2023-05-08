@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+    <div class="formbox">
+        <form method="post" action="{% url 'register' %}">
+            {% csrf_token %}
+
+            <h1 class="max"> Sign up </h1>
+            <input type ="text" class="max" id="fname" placeholder="username" name="username">
+            <br>
+            <input type="email" class="max" id="email" placeholder="email" name="email">
+            <br>
+            <input type="password" class="max" id="password" placeholder="password" name="password1">
+            <br>
+            <input type="password" class="max" id="password" placeholder="password" name="password2">
+            <br>
+            {% if user_exists %}
+            <p style="color: red;">Account already exists</p>
+            {% endif %}
+            <br>
+            <input type="submit" name="submit" class="max" placeholder="SUBMIT" id="submitid">
+            <br>
+            <a href="{% url 'home' %}" id="links">already have an account?</a>
+        </form>
+    </div>
+
+
+
+{% endblock content %}
